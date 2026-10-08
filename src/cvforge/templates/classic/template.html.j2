@@ -1,0 +1,60 @@
+{% import "_macros.html.j2" as m %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ cv.basics.full_name }} — CV</title>
+<style>
+{{ theme_css }}
+</style>
+<style>
+{{ option_css }}
+</style>
+</head>
+<body>
+<header class="header">
+  {% if photo_uri %}<img class="photo" src="{{ photo_uri }}" alt="Profile photo">{% endif %}
+  <div>
+    <h1>{{ cv.basics.full_name }}</h1>
+    {% if cv.basics.headline %}<p class="headline">{{ cv.basics.headline }}</p>{% endif %}
+    <p class="contact">{{ cv.basics.contact_items | join(' · ') }}
+    {%- if cv.basics.email %} · <a href="mailto:{{ cv.basics.email }}">{{ cv.basics.email }}</a>{% endif -%}
+    {%- if cv.basics.website %} · <a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a>{% endif -%}
+    {%- if cv.basics.linkedin %} · <a href="{{ cv.basics.linkedin }}">{{ cv.basics.linkedin | replace('https://', '') }}</a>{% endif -%}
+    {%- if cv.basics.github %} · <a href="{{ cv.basics.github }}">{{ cv.basics.github | replace('https://', '') }}</a>{% endif %}</p>
+  </div>
+</header>
+{% if cv.basics.summary %}
+{% call m.section('Summary') %}<p class="summary">{{ cv.basics.summary | md }}</p>{% endcall %}
+{% endif %}
+{% if cv.experience %}
+{% call m.section('Experience') %}{{ m.experience(cv.experience) }}{% endcall %}
+{% endif %}
+{% if cv.education %}
+{% call m.section('Education') %}{{ m.education(cv.education) }}{% endcall %}
+{% endif %}
+{% if cv.skills %}
+{% call m.section('Skills') %}{{ m.skills(cv.skills) }}{% endcall %}
+{% endif %}
+{% if cv.projects %}
+{% call m.section('Projects') %}{{ m.projects(cv.projects) }}{% endcall %}
+{% endif %}
+{% if cv.certifications %}
+{% call m.section('Certifications') %}{{ m.certifications(cv.certifications) }}{% endcall %}
+{% endif %}
+{% if cv.languages %}
+{% call m.section('Languages') %}{{ m.languages(cv.languages) }}{% endcall %}
+{% endif %}
+{% if cv.awards %}
+{% call m.section('Awards') %}{{ m.awards(cv.awards) }}{% endcall %}
+{% endif %}
+{% if cv.publications %}
+{% call m.section('Publications') %}{{ m.publications(cv.publications) }}{% endcall %}
+{% endif %}
+{% if cv.volunteering %}
+{% call m.section('Volunteering') %}{{ m.volunteering(cv.volunteering) }}{% endcall %}
+{% endif %}
+{% if cv.interests %}
+{% call m.section('Interests') %}{{ m.interests(cv.interests) }}{% endcall %}
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "CVForge",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b && pip install -e '.[dev]' && pre-commit install",
+  "forwardPorts": [8501],
+  "portsAttributes": {
+    "8501": { "label": "Streamlit", "onAutoForward": "openBrowser" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  }
+}

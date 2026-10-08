@@ -1,0 +1,78 @@
+{#- Shared macros used by all themes. Sections are hidden automatically when empty. -#}
+{% macro section(title) -%}
+<section class="section"><h2 class="section-title">{{ title }}</h2>{{ caller() }}</section>
+{%- endmacro %}
+
+{% macro date_range(start, end) -%}
+{{ (start or '') | fmt_date }}{% if start or end %} – {% endif %}{{ (end or '') | fmt_date }}
+{%- endmacro %}
+
+{% macro bullets(items) -%}
+{% if items %}<ul class="bullets">{% for b in items %}<li>{{ b | md }}</li>{% endfor %}</ul>{% endif %}
+{%- endmacro %}
+
+{% macro experience(items) -%}
+{% for e in items %}<div class="item">
+  <div class="item-head"><span class="item-title">{{ e.role }}</span><span class="item-date">{{ date_range(e.start_date, e.end_date) }}</span></div>
+  <div class="item-sub">{{ e.company }}{% if e.location %} · {{ e.location }}{% endif %}</div>
+  {{ bullets(e.highlights) }}
+</div>{% endfor %}
+{%- endmacro %}
+
+{% macro education(items) -%}
+{% for ed in items %}<div class="item">
+  <div class="item-head"><span class="item-title">{{ ed.degree }}{% if ed.field %}, {{ ed.field }}{% endif %}</span><span class="item-date">{{ date_range(ed.start_date, ed.end_date) }}</span></div>
+  <div class="item-sub">{{ ed.institution }}{% if ed.grade %} · {{ ed.grade }}{% endif %}</div>
+  {% if ed.notes %}<p class="item-note">{{ ed.notes | md }}</p>{% endif %}
+</div>{% endfor %}
+{%- endmacro %}
+
+{% macro projects(items) -%}
+{% for p in items %}<div class="item">
+  <div class="item-head"><span class="item-title">{% if p.url %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</span>{% if p.tech %}<span class="item-date">{{ p.tech | join(' · ') }}</span>{% endif %}</div>
+  {% if p.description %}<p class="item-note">{{ p.description | md }}</p>{% endif %}
+  {{ bullets(p.highlights) }}
+</div>{% endfor %}
+{%- endmacro %}
+
+{% macro certifications(items) -%}
+<ul class="plain-list">
+{% for c in items %}<li><span class="item-title">{% if c.url %}<a href="{{ c.url }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</span>{% if c.issuer %} — {{ c.issuer }}{% endif %}{% if c.date %} <span class="item-date">{{ c.date | fmt_date }}</span>{% endif %}</li>
+{% endfor %}</ul>
+{%- endmacro %}
+
+{% macro languages(items) -%}
+<ul class="plain-list">
+{% for l in items %}<li>{{ l.language }}{% if l.proficiency %} — <span class="muted">{{ l.proficiency }}</span>{% endif %}</li>
+{% endfor %}</ul>
+{%- endmacro %}
+
+{% macro awards(items) -%}
+<ul class="plain-list">
+{% for a in items %}<li><span class="item-title">{{ a.name }}</span>{% if a.issuer %} — {{ a.issuer }}{% endif %}{% if a.date %} <span class="item-date">{{ a.date | fmt_date }}</span>{% endif %}{% if a.description %}<br>{{ a.description | md }}{% endif %}</li>
+{% endfor %}</ul>
+{%- endmacro %}
+
+{% macro publications(items) -%}
+<ul class="plain-list">
+{% for p in items %}<li><span class="item-title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>{% if p.venue %} — {{ p.venue }}{% endif %}{% if p.date %} <span class="item-date">{{ p.date | fmt_date }}</span>{% endif %}</li>
+{% endfor %}</ul>
+{%- endmacro %}
+
+{% macro volunteering(items) -%}
+{% for v in items %}<div class="item">
+  <div class="item-head"><span class="item-title">{{ v.role or v.organization }}</span><span class="item-date">{{ date_range(v.start_date, v.end_date) }}</span></div>
+  {% if v.role and v.organization %}<div class="item-sub">{{ v.organization }}</div>{% endif %}
+  {{ bullets(v.highlights) }}
+</div>{% endfor %}
+{%- endmacro %}
+
+{% macro skills(groups) -%}
+<ul class="plain-list">
+{% for g in groups %}<li><span class="item-title">{{ g.name }}:</span> {{ g.skills | join(', ') }}</li>
+{% endfor %}</ul>
+{%- endmacro %}
+
+{% macro interests(tags) -%}
+{% if tags %}<p class="interests">{{ tags | join(' · ') }}</p>{% endif %}
+{%- endmacro %}

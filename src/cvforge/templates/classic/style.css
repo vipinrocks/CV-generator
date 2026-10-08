@@ -1,0 +1,41 @@
+/* classic — single column, serif, conservative. Best for ATS. */
+:root {
+  --accent: #1a1a1a;
+  --font-body: Georgia, 'Times New Roman', serif;
+  --font-size: 10.5pt;
+  --text: #1c1c1c;
+  --muted: #555;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: var(--font-body, Georgia, 'Times New Roman', serif);
+  font-size: var(--font-size, 10.5pt);
+  line-height: 1.45;
+  color: var(--text);
+  margin: 0;
+}
+.header { display: flex; gap: 14px; align-items: center; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 14px; }
+.photo { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; }
+h1 { font-size: 1.9em; margin: 0; letter-spacing: 0.5px; }
+.headline { margin: 2px 0 6px; font-style: italic; color: var(--muted); }
+.contact { margin: 0; font-size: 0.85em; color: var(--muted); word-break: break-word; }
+.section { margin-bottom: 14px; }
+.section-title {
+  font-size: 1.05em; text-transform: uppercase; letter-spacing: 1.5px;
+  border-bottom: 1px solid #bbb; padding-bottom: 2px; margin: 0 0 8px; color: var(--accent);
+}
+.item { margin-bottom: 10px; page-break-inside: avoid; }
+.item-head { display: flex; justify-content: space-between; gap: 12px; }
+.item-title { font-weight: bold; }
+.item-date { color: var(--muted); white-space: nowrap; font-size: 0.9em; }
+.item-sub { color: var(--muted); font-size: 0.95em; }
+.item-note { margin: 3px 0 0; }
+.bullets { margin: 4px 0 0; padding-left: 18px; }
+.bullets li { margin-bottom: 2px; }
+.plain-list { margin: 0; padding-left: 16px; }
+.plain-list li { margin-bottom: 2px; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.summary { margin: 0; text-align: justify; }
+.interests { margin: 0; color: var(--muted); }
+.muted { color: var(--muted); }

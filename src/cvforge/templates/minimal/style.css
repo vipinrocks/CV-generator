@@ -1,0 +1,41 @@
+/* minimal — generous whitespace, thin dividers, clean sans-serif. */
+:root {
+  --accent: #111111;
+  --font-body: 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-size: 10pt;
+  --text: #1c1c1c;
+  --muted: #737373;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: var(--font-body, 'Helvetica Neue', Arial, sans-serif);
+  font-size: var(--font-size, 10pt);
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0;
+}
+.header { margin-bottom: 20px; }
+.photo { width: 30mm; height: 30mm; border-radius: 50%; object-fit: cover; float: right; margin-left: 8mm; }
+h1 { font-size: 2em; font-weight: 300; letter-spacing: 1px; margin: 0; }
+.headline { margin: 2px 0 8px; color: var(--muted); font-weight: 400; }
+.contact { margin: 0; font-size: 0.85em; color: var(--muted); word-break: break-word; }
+.summary { margin: 0 0 16px; color: #333; }
+.section { margin-bottom: 20px; }
+.section-title {
+  font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px;
+  color: var(--muted); border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 5px; margin: 0 0 10px;
+}
+.item { margin-bottom: 14px; page-break-inside: avoid; }
+.item-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 1px; }
+.item-title { font-weight: 600; }
+.item-date { color: var(--muted); font-size: 0.85em; white-space: nowrap; }
+.item-sub { color: var(--muted); font-size: 0.9em; margin-bottom: 2px; }
+.item-note { margin: 4px 0 0; }
+.bullets { margin: 5px 0 0; padding-left: 16px; }
+.bullets li { margin-bottom: 3px; }
+.plain-list { margin: 0; padding: 0; list-style: none; }
+.plain-list li { margin-bottom: 4px; }
+a { color: var(--text); text-decoration: none; border-bottom: 1px solid #d4d4d4; }
+.interests { margin: 0; color: var(--muted); }
+.muted { color: var(--muted); }

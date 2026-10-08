@@ -1,0 +1,89 @@
+# CVForge sample CV — edit freely, then run:
+#   cvforge build cv.yaml --theme modern
+basics:
+  full_name: Ada Lovelace
+  headline: Senior Software Engineer
+  email: ada.lovelace@example.com
+  phone: "+44 20 7946 0958"
+  location: London, UK
+  website: https://adalovelace.dev
+  linkedin: https://www.linkedin.com/in/adalovelace
+  github: https://github.com/adalovelace
+  summary: >-
+    Software engineer with 8+ years of experience building distributed systems
+    and developer tools. Led the migration of a monolith to microservices that
+    **cut deployment time by 70%**. Passionate about clean architecture,
+    mentoring, and open source.
+  # photo: photo.jpg  # optional — circular-cropped by supporting themes
+
+experience:
+  - company: Acme Cloud
+    role: Senior Software Engineer
+    location: London, UK
+    start_date: 2021-03
+    end_date: Present
+    highlights:
+      - "**Led** a team of 5 engineers migrating a monolith to microservices, cutting deploy time by 70%."
+      - "Designed an event pipeline handling [2M events/day](https://example.com/case-study) with 99.99% uptime."
+      - "Mentored 4 junior engineers; 2 were promoted within a year."
+  - company: Initech
+    role: Software Engineer
+    location: Manchester, UK
+    start_date: 2017-07
+    end_date: 2021-02
+    highlights:
+      - "Built the billing service in Python, processing £3M/month with zero billing incidents."
+      - "Reduced API p95 latency from 900ms to 120ms by rewriting hot paths in Go."
+
+education:
+  - institution: University of Manchester
+    degree: BSc
+    field: Computer Science
+    start_date: 2013-09
+    end_date: 2017-06
+    grade: First Class Honours
+    notes: Dissertation on probabilistic data structures.
+
+skills:
+  - name: Languages
+    skills: [Python, Go, SQL, TypeScript]
+  - name: Infrastructure
+    skills: [Kubernetes, Terraform, AWS, PostgreSQL]
+  - name: Practices
+    skills: [TDD, Code review, Incident response]
+
+projects:
+  - name: cvforge
+    url: https://github.com/adalovelace/cvforge
+    description: Open-source CV generator (this very tool!).
+    tech: [Python, pydantic, WeasyPrint]
+    highlights:
+      - "Shipped PDF/DOCX/HTML export with 90%+ test coverage."
+
+certifications:
+  - name: AWS Certified Solutions Architect
+    issuer: Amazon Web Services
+    date: 2022-05
+    url: https://aws.amazon.com/verification
+
+languages:
+  - language: English
+    proficiency: Native
+  - language: French
+    proficiency: B2
+
+awards:
+  - name: Engineering Excellence Award
+    issuer: Acme Cloud
+    date: 2023-02
+    description: For the microservices migration programme.
+
+volunteering:
+  - organization: CodeUK
+    role: Mentor
+    start_date: 2019-01
+    end_date: Present
+    highlights:
+      - "Mentored 12 students through their first web development projects."
+
+interests: [Climbing, Electronic music, Board games]

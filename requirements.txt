@@ -1,0 +1,2 @@
+cvforge @ git+https://github.com/cvforge/cvforge.git
+streamlit>=1.36

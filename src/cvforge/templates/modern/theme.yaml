@@ -1,0 +1,9 @@
+name: modern
+description: "Two-column layout with a coloured sidebar for contact and skills."
+supports_photo: true
+options:
+  - accent_color
+  - font_family
+  - font_size
+  - page_size
+  - margins

@@ -1,0 +1,9 @@
+name: minimal
+description: "Generous whitespace, thin dividers, clean sans-serif."
+supports_photo: true
+options:
+  - accent_color
+  - font_family
+  - font_size
+  - page_size
+  - margins

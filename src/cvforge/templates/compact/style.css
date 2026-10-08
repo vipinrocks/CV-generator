@@ -1,0 +1,44 @@
+/* compact — dense one-page layout for experienced candidates. */
+:root {
+  --accent: #0f766e;
+  --font-body: 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-size: 9pt;
+  --text: #1c1c1c;
+  --muted: #525252;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: var(--font-body, Arial, sans-serif);
+  font-size: var(--font-size, 9pt);
+  line-height: 1.32;
+  color: var(--text);
+  margin: 0;
+}
+.header { border-bottom: 2px solid var(--accent); padding-bottom: 5px; margin-bottom: 8px; }
+.photo { width: 22mm; height: 22mm; border-radius: 50%; object-fit: cover; float: right; margin-left: 5mm; }
+h1 { font-size: 1.5em; margin: 0; }
+.headline { margin: 1px 0 3px; color: var(--accent); font-weight: 600; }
+.contact { margin: 0; font-size: 0.85em; color: var(--muted); word-break: break-word; }
+.summary { margin: 0 0 8px; }
+.cols { display: flex; gap: 14px; }
+.col-main { flex: 2.2; }
+.col-side { flex: 1; }
+.section { margin-bottom: 8px; }
+.section-title {
+  font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--accent); border-bottom: 1px solid #d4d4d4;
+  padding-bottom: 1px; margin: 0 0 5px;
+}
+.item { margin-bottom: 6px; page-break-inside: avoid; }
+.item-head { display: flex; justify-content: space-between; gap: 10px; }
+.item-title { font-weight: bold; }
+.item-date { color: var(--muted); font-size: 0.88em; white-space: nowrap; }
+.item-sub { color: var(--muted); font-size: 0.92em; }
+.item-note { margin: 2px 0 0; }
+.bullets { margin: 2px 0 0; padding-left: 14px; }
+.bullets li { margin-bottom: 1px; }
+.plain-list { margin: 0; padding-left: 13px; }
+.plain-list li { margin-bottom: 1px; }
+a { color: inherit; text-decoration: none; }
+.interests { margin: 0; color: var(--muted); }
+.muted { color: var(--muted); }

@@ -1,0 +1,70 @@
+{% import "_macros.html.j2" as m %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ cv.basics.full_name }} — CV</title>
+<style>
+{{ theme_css }}
+</style>
+<style>
+{{ option_css }}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  {% if photo_uri %}<img class="photo" src="{{ photo_uri }}" alt="Profile photo">{% endif %}
+  <div class="side-block">
+    <h1>{{ cv.basics.full_name }}</h1>
+    {% if cv.basics.headline %}<p class="headline">{{ cv.basics.headline }}</p>{% endif %}
+  </div>
+  <div class="side-block">
+    <h2>Contact</h2>
+    <ul class="plain-list side-list">
+      {% if cv.basics.email %}<li><a href="mailto:{{ cv.basics.email }}">{{ cv.basics.email }}</a></li>{% endif %}
+      {% if cv.basics.phone %}<li>{{ cv.basics.phone }}</li>{% endif %}
+      {% if cv.basics.location %}<li>{{ cv.basics.location }}</li>{% endif %}
+      {% if cv.basics.website %}<li><a href="{{ cv.basics.website }}">{{ cv.basics.website | replace('https://', '') }}</a></li>{% endif %}
+      {% if cv.basics.linkedin %}<li><a href="{{ cv.basics.linkedin }}">{{ cv.basics.linkedin | replace('https://', '') }}</a></li>{% endif %}
+      {% if cv.basics.github %}<li><a href="{{ cv.basics.github }}">{{ cv.basics.github | replace('https://', '') }}</a></li>{% endif %}
+    </ul>
+  </div>
+  {% if cv.skills %}
+  <div class="side-block"><h2>Skills</h2>{{ m.skills(cv.skills) }}</div>
+  {% endif %}
+  {% if cv.languages %}
+  <div class="side-block"><h2>Languages</h2>{{ m.languages(cv.languages) }}</div>
+  {% endif %}
+  {% if cv.interests %}
+  <div class="side-block"><h2>Interests</h2>{{ m.interests(cv.interests) }}</div>
+  {% endif %}
+</aside>
+<main class="main">
+  {% if cv.basics.summary %}
+  <p class="summary">{{ cv.basics.summary | md }}</p>
+  {% endif %}
+  {% if cv.experience %}
+  {% call m.section('Experience') %}{{ m.experience(cv.experience) }}{% endcall %}
+  {% endif %}
+  {% if cv.education %}
+  {% call m.section('Education') %}{{ m.education(cv.education) }}{% endcall %}
+  {% endif %}
+  {% if cv.projects %}
+  {% call m.section('Projects') %}{{ m.projects(cv.projects) }}{% endcall %}
+  {% endif %}
+  {% if cv.certifications %}
+  {% call m.section('Certifications') %}{{ m.certifications(cv.certifications) }}{% endcall %}
+  {% endif %}
+  {% if cv.awards %}
+  {% call m.section('Awards') %}{{ m.awards(cv.awards) }}{% endcall %}
+  {% endif %}
+  {% if cv.publications %}
+  {% call m.section('Publications') %}{{ m.publications(cv.publications) }}{% endcall %}
+  {% endif %}
+  {% if cv.volunteering %}
+  {% call m.section('Volunteering') %}{{ m.volunteering(cv.volunteering) }}{% endcall %}
+  {% endif %}
+</main>
+</div>
+</body>
+</html>

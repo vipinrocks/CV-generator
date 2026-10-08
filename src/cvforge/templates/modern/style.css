@@ -1,0 +1,53 @@
+/* modern — two-column layout with a coloured sidebar for contact and skills. */
+:root {
+  --accent: #2563EB;
+  --font-body: 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-size: 10pt;
+  --text: #1f2937;
+  --side-text: #eef2ff;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: var(--font-body, 'Helvetica Neue', Arial, sans-serif);
+  font-size: var(--font-size, 10pt);
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0;
+}
+.layout { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 32%; min-width: 58mm; background: var(--accent); color: var(--side-text);
+  padding: 10mm 6mm; page-break-inside: avoid;
+}
+.main { flex: 1; padding: 10mm 8mm; }
+.photo { width: 30mm; height: 30mm; border-radius: 50%; object-fit: cover; display: block; margin-bottom: 6mm; }
+h1 { font-size: 1.6em; margin: 0 0 2px; line-height: 1.15; }
+.headline { margin: 0; font-size: 0.95em; opacity: 0.9; }
+.sidebar h2 {
+  font-size: 0.85em; text-transform: uppercase; letter-spacing: 1.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45); padding-bottom: 2px; margin: 0 0 6px;
+}
+.side-block { margin-bottom: 7mm; }
+.side-list, .sidebar .plain-list { list-style: none; padding: 0; margin: 0; font-size: 0.88em; }
+.side-list li, .sidebar .plain-list li { margin-bottom: 3px; word-break: break-word; }
+.sidebar a { color: inherit; }
+.section { margin-bottom: 12px; }
+.section-title {
+  font-size: 1.05em; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--accent); border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 2px; margin: 0 0 8px;
+}
+.item { margin-bottom: 9px; page-break-inside: avoid; }
+.item-head { display: flex; justify-content: space-between; gap: 12px; }
+.item-title { font-weight: bold; }
+.item-date { color: #6b7280; white-space: nowrap; font-size: 0.88em; }
+.item-sub { color: #4b5563; font-size: 0.93em; }
+.item-note { margin: 3px 0 0; }
+.bullets { margin: 4px 0 0; padding-left: 16px; }
+.bullets li { margin-bottom: 2px; }
+.plain-list { margin: 0; padding-left: 16px; }
+.plain-list li { margin-bottom: 2px; }
+a { color: var(--accent); text-decoration: none; }
+.summary { margin: 0 0 12px; }
+.interests { margin: 0; }
+.muted { opacity: 0.85; }

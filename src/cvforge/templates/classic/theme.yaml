@@ -1,0 +1,9 @@
+name: classic
+description: "Single column, serif, conservative. The safest choice for ATS parsing."
+supports_photo: false
+options:
+  - accent_color
+  - font_family
+  - font_size
+  - page_size
+  - margins
