@@ -30,11 +30,9 @@ def _import_weasyprint() -> tuple[bool, str]:
     """
     stdout_capture, stderr_capture = io.StringIO(), io.StringIO()
     try:
-        with contextlib.redirect_stdout(stdout_capture), contextlib.redirect_stderr(
-            stderr_capture
-        ):
+        with contextlib.redirect_stdout(stdout_capture), contextlib.redirect_stderr(stderr_capture):
             import weasyprint  # noqa: F401
-    except Exception as exc:  # noqa: BLE001 - OSError on missing Pango, ImportError...
+    except Exception as exc:
         detail = f"{type(exc).__name__}: {exc}"
         banner = (stdout_capture.getvalue() + stderr_capture.getvalue()).strip()
         return False, f"{detail}\n{banner}" if banner else detail
