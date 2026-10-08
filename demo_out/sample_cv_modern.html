@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ada Lovelace — CV</title>
+<style>
+/* modern — two-column layout with a coloured sidebar for contact and skills. */
+:root {
+  --accent: #2563EB;
+  --font-body: &#39;Helvetica Neue&#39;, Arial, &#39;Noto Sans&#39;, sans-serif;
+  --font-size: 10pt;
+  --text: #1f2937;
+  --side-text: #eef2ff;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: var(--font-body, &#39;Helvetica Neue&#39;, Arial, sans-serif);
+  font-size: var(--font-size, 10pt);
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0;
+}
+.layout { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 32%; min-width: 58mm; background: var(--accent); color: var(--side-text);
+  padding: 10mm 6mm; page-break-inside: avoid;
+}
+.main { flex: 1; padding: 10mm 8mm; }
+.photo { width: 30mm; height: 30mm; border-radius: 50%; object-fit: cover; display: block; margin-bottom: 6mm; }
+h1 { font-size: 1.6em; margin: 0 0 2px; line-height: 1.15; }
+.headline { margin: 0; font-size: 0.95em; opacity: 0.9; }
+.sidebar h2 {
+  font-size: 0.85em; text-transform: uppercase; letter-spacing: 1.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45); padding-bottom: 2px; margin: 0 0 6px;
+}
+.side-block { margin-bottom: 7mm; }
+.side-list, .sidebar .plain-list { list-style: none; padding: 0; margin: 0; font-size: 0.88em; }
+.side-list li, .sidebar .plain-list li { margin-bottom: 3px; word-break: break-word; }
+.sidebar a { color: inherit; }
+.section { margin-bottom: 12px; }
+.section-title {
+  font-size: 1.05em; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--accent); border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 2px; margin: 0 0 8px;
+}
+.item { margin-bottom: 9px; page-break-inside: avoid; }
+.item-head { display: flex; justify-content: space-between; gap: 12px; }
+.item-title { font-weight: bold; }
+.item-date { color: #6b7280; white-space: nowrap; font-size: 0.88em; }
+.item-sub { color: #4b5563; font-size: 0.93em; }
+.item-note { margin: 3px 0 0; }
+.bullets { margin: 4px 0 0; padding-left: 16px; }
+.bullets li { margin-bottom: 2px; }
+.plain-list { margin: 0; padding-left: 16px; }
+.plain-list li { margin-bottom: 2px; }
+a { color: var(--accent); text-decoration: none; }
+.summary { margin: 0 0 12px; }
+.interests { margin: 0; }
+.muted { opacity: 0.85; }
+
+</style>
+<style>
+:root {
+  --accent: #2563EB;
+  --font-size: 10pt;
+}
+@page { size: A4; margin: 16mm; }
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  
+  <div class="side-block">
+    <h1>Ada Lovelace</h1>
+    <p class="headline">Senior Software Engineer</p>
+  </div>
+  <div class="side-block">
+    <h2>Contact</h2>
+    <ul class="plain-list side-list">
+      <li><a href="mailto:ada.lovelace@example.com">ada.lovelace@example.com</a></li>
+      <li>+44 20 7946 0958</li>
+      <li>London, UK</li>
+      <li><a href="https://adalovelace.dev">adalovelace.dev</a></li>
+      <li><a href="https://www.linkedin.com/in/adalovelace">www.linkedin.com/in/adalovelace</a></li>
+      <li><a href="https://github.com/adalovelace">github.com/adalovelace</a></li>
+    </ul>
+  </div>
+  
+  <div class="side-block"><h2>Skills</h2><ul class="plain-list">
+<li><span class="item-title">Languages:</span> Python, Go, SQL, TypeScript</li>
+<li><span class="item-title">Infrastructure:</span> Kubernetes, Terraform, AWS, PostgreSQL</li>
+<li><span class="item-title">Practices:</span> TDD, Code review, Incident response</li>
+</ul></div>
+  
+  
+  <div class="side-block"><h2>Languages</h2><ul class="plain-list">
+<li>English — <span class="muted">Native</span></li>
+<li>French — <span class="muted">B2</span></li>
+</ul></div>
+  
+  
+  <div class="side-block"><h2>Interests</h2><p class="interests">Climbing · Electronic music · Board games</p></div>
+  
+</aside>
+<main class="main">
+  
+  <p class="summary">Software engineer with 8+ years of experience building distributed systems and developer tools. Led the migration of a monolith to microservices that <strong>cut deployment time by 70%</strong>. Passionate about clean architecture, mentoring, and open source.</p>
+  
+  
+  <section class="section"><h2 class="section-title">Experience</h2><div class="item">
+  <div class="item-head"><span class="item-title">Senior Software Engineer</span><span class="item-date">Mar 2021 – Present</span></div>
+  <div class="item-sub">Acme Cloud · London, UK</div>
+  <ul class="bullets"><li><strong>Led</strong> a team of 5 engineers migrating a monolith to microservices, cutting deploy time by 70%.</li><li>Designed an event pipeline handling <a href="https://example.com/case-study">2M events/day</a> with 99.99% uptime.</li><li>Mentored 4 junior engineers; 2 were promoted within a year.</li></ul>
+</div><div class="item">
+  <div class="item-head"><span class="item-title">Software Engineer</span><span class="item-date">Jul 2017 – Feb 2021</span></div>
+  <div class="item-sub">Initech · Manchester, UK</div>
+  <ul class="bullets"><li>Built the billing service in Python, processing £3M/month with zero billing incidents.</li><li>Reduced API p95 latency from 900ms to 120ms by rewriting hot paths in Go.</li></ul>
+</div></section>
+  
+  
+  <section class="section"><h2 class="section-title">Education</h2><div class="item">
+  <div class="item-head"><span class="item-title">BSc, Computer Science</span><span class="item-date">Sep 2013 – Jun 2017</span></div>
+  <div class="item-sub">University of Manchester · First Class Honours</div>
+  <p class="item-note">Dissertation on probabilistic data structures.</p>
+</div></section>
+  
+  
+  <section class="section"><h2 class="section-title">Projects</h2><div class="item">
+  <div class="item-head"><span class="item-title"><a href="https://github.com/adalovelace/cvforge">cvforge</a></span><span class="item-date">Python · pydantic · WeasyPrint</span></div>
+  <p class="item-note">Open-source CV generator (this very tool!).</p>
+  <ul class="bullets"><li>Shipped PDF/DOCX/HTML export with 90%+ test coverage.</li></ul>
+</div></section>
+  
+  
+  <section class="section"><h2 class="section-title">Certifications</h2><ul class="plain-list">
+<li><span class="item-title"><a href="https://aws.amazon.com/verification">AWS Certified Solutions Architect</a></span> — Amazon Web Services <span class="item-date">May 2022</span></li>
+</ul></section>
+  
+  
+  <section class="section"><h2 class="section-title">Awards</h2><ul class="plain-list">
+<li><span class="item-title">Engineering Excellence Award</span> — Acme Cloud <span class="item-date">Feb 2023</span><br>For the microservices migration programme.</li>
+</ul></section>
+  
+  
+  
+  <section class="section"><h2 class="section-title">Volunteering</h2><div class="item">
+  <div class="item-head"><span class="item-title">Mentor</span><span class="item-date">Jan 2019 – Present</span></div>
+  <div class="item-sub">CodeUK</div>
+  <ul class="bullets"><li>Mentored 12 students through their first web development projects.</li></ul>
+</div></section>
+  
+</main>
+</div>
+</body>
+</html>
